@@ -57,6 +57,7 @@ class GalleyItemRecyclerViewAdapter(
         }
 
         if (data[position].filePath==DriveUploadHelper.getLastFileUploaded(context)){
+            data[position].isUploaded = true
             holder.cloudImageView.visibility = View.VISIBLE
         }
 

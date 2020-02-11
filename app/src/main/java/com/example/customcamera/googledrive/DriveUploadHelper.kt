@@ -104,7 +104,6 @@ object DriveUploadHelper {
                 for (i in lastFileIndex..sortedFileList.lastIndex){
                     uploadImageFile(sortedFileList[i].path,it,context)
                 }
-                stopSync(context)
             }
         }
     }
@@ -179,6 +178,10 @@ object DriveUploadHelper {
     }
 
     private fun saveLastFileUploaded(context: Context,filePath : String){
+
+        if (getSortedFileList(context).last().path==filePath)
+            stopSync(context)
+
         val sharedPreferences = context.getSharedPreferences("DriveSync",Context.MODE_PRIVATE).edit()
         sharedPreferences.putString("FileName",filePath)
         sharedPreferences.apply()

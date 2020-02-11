@@ -75,6 +75,7 @@ class CameraActivity : AppCompatActivity() {
     private fun startCamera(){
 
         val previewConfig = PreviewConfig.Builder().apply {
+            setTargetResolution(Size(1980, 1080))
             setTargetAspectRatio(Rational(viewFinder.width, viewFinder.height))
         }.build()
 

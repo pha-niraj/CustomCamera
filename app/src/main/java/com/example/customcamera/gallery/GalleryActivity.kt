@@ -30,7 +30,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class GalleryActivity : AppCompatActivity() {
-    private lateinit var galleryData : ArrayList<GalleryDataClass>
+
+    companion object{
+        private lateinit var galleryData : ArrayList<GalleryDataClass>
+    }
     private lateinit var adapter: GalleryRecyclerViewAdapter
 
     private val localBroadcastReceiver = object : BroadcastReceiver(){
